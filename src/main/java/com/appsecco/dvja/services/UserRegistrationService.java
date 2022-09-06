@@ -16,7 +16,7 @@ public class UserRegistrationService {
         return userService;
     }
 
-    public User register(String name, String login, String email,
+    public User register(String name, String username, String email,
                          String password, String passwordConfirmation)
     {
         User user;
@@ -28,7 +28,7 @@ public class UserRegistrationService {
 
         user = new User();
         user.setName(name);
-        user.setLogin(login);
+        user.setLogin(username);
         user.setPassword(password);
         user.setEmail(email);
 
@@ -36,3 +36,4 @@ public class UserRegistrationService {
         return user;
     }
 }
+

@@ -8,7 +8,7 @@ public class UserAction extends BaseController {
 
     private UserService userService;
     private User user;
-    private String login;
+    private String username;
     private String password;
     private String passwordConfirmation;
     private String email;
@@ -30,12 +30,12 @@ public class UserAction extends BaseController {
         this.user = user;
     }
 
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -102,13 +102,13 @@ public class UserAction extends BaseController {
     }
 
     public String search() {
-        if(StringUtils.isEmpty(getLogin()))
+        if(StringUtils.isEmpty(getUsername()))
             return INPUT;
 
         try {
-            user = userService.findByLoginUnsafe(getLogin());
+            user = userService.findByLoginUnsafe(getUsername());
             if(user == null) {
-                addFieldError("login", "User not found by login: " + getLogin());
+                addFieldError("login", "User not found by login: " + getUsername());
                 return INPUT;
             }
         }
@@ -121,3 +121,4 @@ public class UserAction extends BaseController {
     }
 
 }
+

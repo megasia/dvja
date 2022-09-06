@@ -24,7 +24,7 @@
                     <s:form action="login" method="post" theme="bootstrap">
                         <s:textfield
                             label="Login"
-                            name="login"
+                            name="username"
                             placeholder="Enter login"/>
                          <s:password
                             label="Password"

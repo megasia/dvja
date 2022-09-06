@@ -21,7 +21,7 @@
         <div class='row'>
           <div class='col-md-12'>
             <small>
-                <i class='fa fa-heart'></i> Damn Vulnerable Java Application
+                <i class='fa fa-heart'></i> Damn Vulnerable Java Application (created with Google's image docker)
             </small>
           </div>
         </div>

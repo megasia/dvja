@@ -1,9 +1,7 @@
-FROM openjdk:8
-MAINTAINER Abhisek Datta <abhisek@appsecco.com>
+FROM eu.gcr.io/google-containers/cos-kernel-headers:latest
+MAINTAINER Nobody <nobody@mainteiner.this>
 
-RUN apt-get update
-RUN apt-get install -y default-mysql-client
-RUN apt-get install -y maven
+RUN apt-get update && apt-get install -y maven default-mysql-client default-jdk
 
 WORKDIR /app
 COPY pom.xml pom.xml
@@ -15,3 +13,4 @@ RUN chmod 755 /app/scripts/start.sh
 
 EXPOSE 8080
 CMD ["sh", "-c", "/app/scripts/start.sh"]
+

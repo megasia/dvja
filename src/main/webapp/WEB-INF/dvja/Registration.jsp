@@ -28,7 +28,7 @@
                             placeholder="Enter full name"/>
                         <s:textfield
                             label="Login"
-                            name="login"
+                            name="username"
                             placeholder="Enter login"/>
                         <s:textfield
                             label="Email"

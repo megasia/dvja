@@ -8,7 +8,7 @@ public class Login extends BaseController {
 
     private UserAuthenticationService userAuthenticationService;
 
-    private String login;
+    private String username;
     private String password;
 
     public UserAuthenticationService getUserAuthenticationService() {
@@ -19,12 +19,12 @@ public class Login extends BaseController {
         this.userAuthenticationService = userAuthenticationService;
     }
 
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -43,10 +43,10 @@ public class Login extends BaseController {
     public String execute() {
         User user;
 
-        if(StringUtils.isEmpty(getLogin()) || StringUtils.isEmpty(getPassword()))
+        if(StringUtils.isEmpty(getUsername()) || StringUtils.isEmpty(getPassword()))
             return INPUT;
 
-        if((user = userAuthenticationService.authenticate(getLogin(), getPassword())) != null) {
+        if((user = userAuthenticationService.authenticate(getUsername(), getPassword())) != null) {
             sessionSetUser(user);
             return SUCCESS;
         }
@@ -55,3 +55,4 @@ public class Login extends BaseController {
         return INPUT;
     }
 }
+

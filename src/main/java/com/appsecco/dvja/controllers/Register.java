@@ -7,7 +7,7 @@ import org.apache.commons.lang.StringUtils;
 public class Register extends BaseController {
 
     private String name;
-    private String login;
+    private String username;
     private String email;
     private String password;
     private String passwordConfirmation;
@@ -22,12 +22,12 @@ public class Register extends BaseController {
         this.name = name;
     }
 
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -68,7 +68,7 @@ public class Register extends BaseController {
 
         if(StringUtils.isEmpty(getName()))
             addFieldError("name", "Name is required");
-        if(StringUtils.isEmpty(getLogin()))
+        if(StringUtils.isEmpty(getUsername()))
             addFieldError("login", "Login is required");
         if(StringUtils.isEmpty(getPassword()))
             addFieldError("password", "Password is required");
@@ -82,7 +82,7 @@ public class Register extends BaseController {
         User user = null;
 
         try {
-            user = userRegistrationService.register(getName(), getLogin(), getEmail(),
+            user = userRegistrationService.register(getName(), getUsername(), getEmail(),
                     getPassword(), getPasswordConfirmation());
         }
         catch(Exception e) {
@@ -96,3 +96,4 @@ public class Register extends BaseController {
         return INPUT;
     }
 }
+
